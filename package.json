@@ -8,27 +8,60 @@
   "categories": [
     "Data",
     "Finance",
-    "Developer Tools"
+    "Developer Tools",
+    "Productivity"
+  ],
+  "keywords": [
+    "Etherscan",
+    "Blockchain",
+    "Ethereum"
   ],
   "license": "MIT",
   "commands": [
     {
       "name": "etherscan-search",
-      "title": "Etherscan Search",
-      "subtitle": "Paste an address, a transaction, etc.",
+      "title": "Address Lookup",
+      "subtitle": "Etherscan",
       "description": "Search on Etherscan, and returns the results.",
-      "mode": "view"
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "hash",
+          "placeholder": "0x0",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "etherscanAPIKey",
+      "description": "Etherscan API Key. If not present, will use anonymous queries.",
+      "type": "textfield",
+      "required": false,
+      "title": "Etherscan API Key"
+    },
+    {
+      "name": "alchemyAPIKey",
+      "description": "Alchemy API Key.",
+      "type": "textfield",
+      "required": true,
+      "title": "Alchemy API Key"
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.48.8"
+    "@chainlink/contracts": "^0.6.1",
+    "@raycast/api": "^1.48.8",
+    "@raycast/utils": "^1.5.2",
+    "ethers": "^6.1.0"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
     "@types/node": "18.8.3",
     "@types/react": "18.0.9",
     "eslint": "^7.32.0",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.4",
     "typescript": "^4.4.3"
   },
   "scripts": {
